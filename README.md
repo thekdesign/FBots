@@ -89,6 +89,13 @@ class ChatController extends Controller
 Route::match(['get', 'post'], '/bots', 'ChatController@talk');
 ```
 
+<strong>VerifyCsrfToken</strong>
+
+reference - https://laravel.com/docs/5.5/csrf#csrf-excluding-uris
+
+將你的route加入白名單
+Excluding URIs From CSRF Protection
+
 
 ### Messenger 設定 Messenger Settings
 
