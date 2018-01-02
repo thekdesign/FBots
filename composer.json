@@ -5,11 +5,11 @@
     "description": "chatbot",
     "authors": [
         {
-            "name": "ThekDesign",
+            "name": "Kai Wen Xu",
             "email": "kevin830802@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=7.0.0",
         "botman/botman": "^2.1",
