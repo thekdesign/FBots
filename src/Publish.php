@@ -8,13 +8,11 @@ use BotMan\BotMan\Http\Curl;
 class Publish
 {
 
-    private $curl, $access_token;
+    private $curl;
 
-    public function __construct($access_token)
+    public function __construct()
     {
         $this->curl = new Curl();
-
-	    $this->access_token = $access_token;
 
     }
 
@@ -29,7 +27,7 @@ class Publish
     ) {
 
         $prams = [
-            'access_token' => $this->access_token,
+            'access_token' => env('FACEBOOK_TOKEN'),
         ];
 
         $header = [
@@ -61,7 +59,7 @@ class Publish
     ) {
 
         $prams = [
-            'access_token' => $this->access_token,
+            'access_token' => env('FACEBOOK_TOKEN'),
         ];
 
         $header = [
@@ -83,7 +81,7 @@ class Publish
     public function get($page_id , $type = '')
     {
         $prams = [
-            'access_token' => $this->access_token,
+            'access_token' => env('FACEBOOK_TOKEN'),
         ];
 
         $header = [
