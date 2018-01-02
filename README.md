@@ -93,7 +93,7 @@ Route::match(['get', 'post'], '/bots', 'ChatController@talk');
 
 reference - https://laravel.com/docs/5.5/csrf#csrf-excluding-uris
 
-將你的route加入白名單
+將你的route加入白名單 <br>
 Excluding URIs From CSRF Protection
 
 
