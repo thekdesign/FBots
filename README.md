@@ -3,8 +3,9 @@
 將 botman 與 facebook messenger 串接，達到快速建立 facebook messenger 的 chatbots.
 <br>A bots with botman and facebook messenger.
 
+reference - [BotMan](https://botman.io/)<br>
 reference - [Messenger](https://developers.facebook.com/docs/messenger-platform)<br>
-reference - [BotMan](https://botman.io/)
+reference - [Pages](https://developers.facebook.com/docs/pages)
 
 ## 開始使用 Getting Started
 
@@ -113,6 +114,10 @@ https://botman.io/2.0/driver-facebook-messenger
 reference
 https://botman.io/2.0/driver-facebook-messenger
 
+----------------------------------
+
+<strong>聊天機器人</strong><br>
+<strong>ChatBots</strong>
 
 ```
         $bots = new FBots($request);
@@ -222,10 +227,66 @@ https://botman.io/2.0/driver-facebook-messenger
 
         $bots->listen();
 ```
+--------------------------------------
+
+<strong>粉絲團</strong>
+<strong>Pages</strong>
+
+```
+    public function publish()
+    {
+        $pages = new Publish();
+
+        $page_id = '***';
+        $message = 'Hello World';
+        $link = 'https://github.com/ThekDesign';
+        
+        // reference - https://developers.facebook.com/docs/graph-api/video-uploads
+        $photo = '';
+        $video = '';
+        
+        // 排定發佈
+        // reference - https://developers.facebook.com/docs/pages/publishing
+        $publish = true;
+
+        $result = $pages->post(
+            $page_id,
+            $message,
+            $link,
+            $photo,
+            $video,
+            $publish);
+
+        return $result;
+    }
+
+    public function reply()
+    {
+        $pages = new Publish();
+
+
+        // type: comments(公開回覆), private_replies(私人訊息)
+        $pages->reply('comments', 'page_id', 'message');
+    }
+    
+        public function obtain()
+    {
+        $pages = new Publish();
+
+        // get the post 拿到那則貼文
+        $result = $pages->get('page_id');
+        
+        // type: comments(公開回覆)
+        // get all comments 拿到所有留言
+        // $result = $pages->get('page_id', 'comments');
+
+        return $result;
+    }
+
+```
+
 
 ## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
