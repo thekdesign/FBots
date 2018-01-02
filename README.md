@@ -233,4 +233,4 @@ Add additional notes about how to deploy this on a live system
 
 ## License
 
-FBots is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+FBots is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
