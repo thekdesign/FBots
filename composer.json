@@ -1,0 +1,26 @@
+{
+    "name": "thekdesign/fbots",
+    "keyword": ["thek" , "chatbot"],
+    "license": "MIT",
+    "description": "chat bot",
+    "authors": [
+        {
+            "name": "ThekDesign",
+            "email": "kevin830802@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "botman/botman": "^2.1",
+        "botman/driver-facebook": "^1.5",
+        "botman/driver-web": "^1.2",
+        "laravel/framework": "5.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thek\\FBots\\": "src/"
+        }
+    }
+}
+
