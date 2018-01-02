@@ -86,7 +86,7 @@ class ChatController extends Controller
 <strong>Route</strong>
 
 ```
-Route::match(['get', 'post'], '/bots', 'BotsController@talk');
+Route::match(['get', 'post'], '/bots', 'ChatController@talk');
 ```
 
 
