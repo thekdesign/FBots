@@ -42,7 +42,7 @@ composer require botman/botman botman/driver-facebook
 ### 安裝及設定 Install and Settings
 
 ```
-composer require thek/fbots
+composer require thekdesign/fbots
 ```
 
 到 .env 檔內新增三個設定值
@@ -61,6 +61,12 @@ FACEBOOK_APP_SECRET = "your-facebook-app-secret"
 -----------------------------------------------------------
 
 ## 快速使用 Quick Start
+
+<strong>安裝所有元件 install all </strong>
+
+```
+composer require botman/botman botman/driver-facebook thekdesign/fbots
+```
 
 新增一個 Controller 再新增一個 function
 <br>new a Controller and new a function
