@@ -8,17 +8,18 @@ use BotMan\BotMan\Http\Curl;
 class Publish
 {
 
-    private $curl;
+    private $curl, $access_token;
 
-    public function __construct()
+    public function __construct($access_token)
     {
         $this->curl = new Curl();
+
+	    $this->access_token = $access_token;
 
     }
 
     public function post(
         $pages_id,
-        $access_token,
         $message,
         $link = null,
         $photos = null,
@@ -27,22 +28,25 @@ class Publish
         $publish_time = null
     ) {
 
+        $prams = [
+            'access_token' => $this->access_token,
+        ];
+
         $header = [
             'Content-Type' => 'application/json',
         ];
 
         $body = [
-            'access_token' => $access_token,
             'message' => $message,
             'link' => $link,
             'photos' => $photos,
             'video' => $video,
             'published' => $published,
-            'scheduled_publish_time' => $publish_time
+            'scheduled_publish_time' => $publish_time,
         ];
 
         $result = $this->curl->post('https://graph.facebook.com/v2.11/' . $pages_id . '/feed'
-            , []
+            , $prams
             , $body
             , $header);
 
@@ -53,30 +57,42 @@ class Publish
     public function reply(
         $type,
         $page_id,
-        $access_token,
         $message
     ) {
+
+        $prams = [
+            'access_token' => $this->access_token,
+        ];
 
         $header = [
             'Content-Type' => 'application/json',
         ];
 
         $body = [
-            'access_token' => $access_token,
             'message' => $message,
         ];
 
         $result = $this->curl->post('https://graph.facebook.com/v2.11/' . $page_id . '/' . $type
-            , []
+            , $prams
             , $body
             , $header);
 
         return $result;
     }
 
-    public function get($page_id, $type = '')
+    public function get($page_id , $type = '')
     {
-        $result = $this->curl->get('https://www.facebook.com/' . $page_id . '/' . $type);
+        $prams = [
+            'access_token' => $this->access_token,
+        ];
+
+        $header = [
+            'Content-Type' => 'application/json',
+        ];
+
+        $result = $this->curl->get('https://graph.facebook.com/v2.11/' . $page_id . '/' . $type
+            ,$prams
+            ,$header);
 
         return $result;
     }
