@@ -1,7 +1,7 @@
 # FBots
 
 將 botman 與 facebook messenger 串接，達到快速建立 facebook messenger 的 chatbots.
-<br>A bots with botman and facebook messenger.
+<br>A bots with botman, facebook messenger and pages.
 
 reference - [BotMan](https://botman.io/)<br>
 reference - [Messenger](https://developers.facebook.com/docs/messenger-platform)<br>
