@@ -33,13 +33,6 @@ composer create-project --prefer-dist laravel/laravel fbots
 + 確定你有一個 facebook developer 帳號，並新建一個應用程式
 + make sure that you have a facebook developer account and create an application
 
-+ 安裝 botman/botman 與 botman/driver-facebook
-+ install botman/botman and botman/driver-facebook
-
-```
-composer require botman/botman botman/driver-facebook
-```
-
 ### 安裝及設定 Install and Settings
 
 ```
@@ -66,7 +59,7 @@ FACEBOOK_APP_SECRET = "your-facebook-app-secret"
 <strong>安裝所有元件 install all </strong>
 
 ```
-composer require botman/botman botman/driver-facebook thekdesign/fbots
+composer require thekdesign/fbots
 ```
 
 新增一個 Controller 再新增一個 function
@@ -93,8 +86,15 @@ class ChatController extends Controller
 <strong>Route</strong>
 
 ```
-Route::match(['get', 'post'], '/bots', 'BotsController@talk');
+Route::match(['get', 'post'], '/bots', 'ChatController@talk');
 ```
+
+<strong>VerifyCsrfToken</strong>
+
+reference - https://laravel.com/docs/5.5/csrf#csrf-excluding-uris
+
+將你的route加入白名單 <br>
+Excluding URIs From CSRF Protection
 
 
 ### Messenger 設定 Messenger Settings
