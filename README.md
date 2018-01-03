@@ -233,11 +233,19 @@ https://botman.io/2.0/driver-facebook-messenger
 <strong>Pages</strong>
 
 ```
+Get Method
+
+reference - https://developers.facebook.com/docs/graph-api/reference/page/
+
+$pages->get('page_id', $type);
+```
+
+```
     public function publish()
     {
         $pages = new Publish();
 
-        $page_id = '***';
+        $pages_id = '***';
         $message = 'Hello World';
         $link = 'https://github.com/ThekDesign';
         
@@ -250,7 +258,7 @@ https://botman.io/2.0/driver-facebook-messenger
         $publish = true;
 
         $result = $pages->post(
-            $page_id,
+            $pages_id,
             $message,
             $link,
             $photo,

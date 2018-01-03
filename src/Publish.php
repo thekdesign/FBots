@@ -78,6 +78,16 @@ class Publish
         return $result;
     }
 
+    public function autoReply(
+        $type_reply,
+        $page_id,
+        $message)
+    {
+        $publish_list = $this->get($page_id, 'comments');
+
+
+    }
+
     public function get($page_id , $type = '')
     {
         $prams = [
