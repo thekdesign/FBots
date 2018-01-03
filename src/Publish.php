@@ -95,7 +95,7 @@ class Publish
 
         foreach ($publish_comments as $publish_comment) {
 
-            $id = array_push($id, $publish_comment->from->id);
+            $id[] = array_push($id, $publish_comment->from->id);
 
         }
 

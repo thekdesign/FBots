@@ -33,22 +33,20 @@ class FBots
 
     public function chat($hears, $reply)
     {
-        $this->ans = $reply;
 
-        $this->bots->hears($hears, function (BotMan $bot) {
+        $this->bots->hears($hears, function (BotMan $bot) use ($reply) {
 
-            $bot->reply($this->ans);
+            $bot->reply($reply);
 
         });
     }
 
     public function chat_fallback($reply)
     {
-        $this->ans = $reply;
 
-        $this->bots->fallback(function (BotMan $bot) {
+        $this->bots->fallback(function (BotMan $bot) use ($reply) {
 
-            $bot->reply($this->ans);
+            $bot->reply($reply);
 
         });
     }
