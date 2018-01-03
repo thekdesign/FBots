@@ -81,14 +81,37 @@ class Publish
     public function autoReply(
         $type_reply,
         $page_id,
-        $message)
-    {
+        $hears,
+        $reply
+    ) {
+
+        $id = [];
+
         $publish_list = $this->get($page_id, 'comments');
 
+        $publish_comments = json_decode($publish_list->getContent())->data;
+
+        $comment = $publish_comments[count($publish_comments) - 1];
+
+        foreach ($publish_comments as $publish_comment) {
+
+            $id = array_push($id, $publish_comment->from->id);
+
+        }
+
+        if (array_unique($id) === $id) {
+
+            if ($hears === $comment->message) {
+
+                $this->reply($type_reply, $comment->id, $reply);
+
+            }
+
+        }
 
     }
 
-    public function get($page_id , $type = '')
+    public function get($page_id, $type = '')
     {
         $prams = [
             'access_token' => env('FACEBOOK_TOKEN'),
@@ -99,8 +122,8 @@ class Publish
         ];
 
         $result = $this->curl->get('https://graph.facebook.com/v2.11/' . $page_id . '/' . $type
-            ,$prams
-            ,$header);
+            , $prams
+            , $header);
 
         return $result;
     }
