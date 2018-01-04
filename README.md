@@ -281,16 +281,15 @@ https://botman.io/2.0/driver-facebook-messenger
     /* $message      : write what you want to post        */
     /* $link         : if you want to post include links  */
     /* $photo        : if you want to post include photos */
-    /* $video        : if you want to post include videos */
     /* $published    : decide that publish now or later   */
     /* $publish_time : decide that publish time           */
     /* -------------------------------------------------- */
     /******************************************************/
         
     // post function
-    // 圖片及影片的上傳方式，請參考facebook的規則
-    // reference facebook about upload images and videos
-    // https://developers.facebook.com/docs/graph-api/video-uploads 
+    
+    // 圖片請使用url
+    // use url for photo 
     
         $pages->post($pages_id, $message);
     
@@ -361,10 +360,8 @@ $pages->get('page_id', $type);
         $pages_id = '***';
         $message = 'Hello World';
         $link = 'https://github.com/ThekDesign';
-        
-        // reference - https://developers.facebook.com/docs/graph-api/video-uploads
-        $photo = '';
-        $video = '';
+        // $link = 'https://www.youtube.com/';
+        $photo = 'https://c1.staticflickr.com/9/8755/16962787241_0f4839004a_b.jpg';
         
         /* 排定發佈，選擇false會得到response後的id，根據個人需要發佈的時機發佈 */
         /* If you set "$publish = false", you will get the id of response. */
@@ -377,7 +374,6 @@ $pages->get('page_id', $type);
             $message,
             $link,
             $photo,
-            $video,
             $publish);
 
         return $result;

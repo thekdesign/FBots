@@ -33,8 +33,7 @@ class Publish
         $pages_id,
         $message,
         $link = null,
-        $photos = null,
-        $video = null,
+        $photo = null,
         $published = true,
         $publish_time = null
     ) {
@@ -50,16 +49,26 @@ class Publish
         $body = [
             'message' => $message,
             'link' => $link,
-            'photos' => $photos,
-            'video' => $video,
+            'url' => $photo,
             'published' => $published,
             'scheduled_publish_time' => $publish_time,
         ];
 
-        $result = $this->curl->post('https://graph.facebook.com/v2.11/' . $pages_id . '/feed'
-            , $prams
-            , $body
-            , $header);
+        if ($photo) {
+
+            $result = $this->curl->post('https://graph.facebook.com/v2.11/' . $pages_id . '/photos'
+                , $prams
+                , $body
+                , $header);
+
+        } else {
+
+            $result = $this->curl->post('https://graph.facebook.com/v2.11/' . $pages_id . '/feed'
+                , $prams
+                , $body
+                , $header);
+
+        }
 
         return $result;
 
