@@ -74,14 +74,14 @@ class Publish
 
     }
 
-    /**************************************************/
-    /*                 reply method                   */
-    /* ---------------------------------------------- */
-    /* $type     : comments, private_replies          */
-    /* $page_id  : the post's id                      */
-    /* $message  : write what you want to reply       */
-    /* ---------------------------------------------- */
-    /**************************************************/
+    /***************************************************************/
+    /*                         reply method                        */
+    /* ----------------------------------------------------------- */
+    /* $type     : comments, private_replies(Permissions problems) */
+    /* $page_id  : the post's id                                   */
+    /* $message  : write what you want to reply                    */
+    /* ----------------------------------------------------------- */
+    /***************************************************************/
 
     public function reply(
         $type,
@@ -123,7 +123,8 @@ class Publish
         $type_reply,
         $page_id,
         $hears,
-        $reply
+        $reply,
+        $repeat = true
     ) {
 
         $publish_id = [];
@@ -150,8 +151,14 @@ class Publish
 
                 foreach ($comment_replies as $comment_reply) {
 
-                    if ($comment_reply->from->id === substr($page_id, 0, 15)) {
-                        $comment_repeat = false;
+                    if ($repeat) {
+
+                        if ($comment_reply->from->id === substr($page_id, 0, 15)) {
+
+                            $comment_repeat = false;
+
+                        }
+
                     }
 
                 }

@@ -22,8 +22,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="99">
-                <caret line="362" column="22" lean-forward="false" selection-start-line="362" selection-start-column="22" selection-end-line="362" selection-end-column="22" />
+              <first_editor relative-caret-position="1410">
+                <caret line="314" column="74" lean-forward="false" selection-start-line="314" selection-start-column="74" selection-end-line="314" selection-end-column="74" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -34,8 +34,8 @@
       <file leaf-file-name="Publish.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Publish.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="58" column="98" lean-forward="false" selection-start-line="58" selection-start-column="98" selection-end-line="58" selection-end-column="98" />
+            <state relative-caret-position="76">
+              <caret line="79" column="56" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="FBots.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FBots.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-209">
+            <state relative-caret-position="133">
               <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="47" />
               <folding />
             </state>
@@ -199,12 +199,12 @@
       <updated>1514880484320</updated>
       <workItem from="1514880485721" duration="7644000" />
       <workItem from="1514944198554" duration="19288000" />
-      <workItem from="1515030931805" duration="11200000" />
+      <workItem from="1515030931805" duration="14308000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38132000" />
+    <option name="totallyTimeSpent" value="41240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="-4" width="1305" height="772" extended-state="6" />
@@ -365,7 +365,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FBots.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-209">
+        <state relative-caret-position="133">
           <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="47" />
           <folding />
         </state>
@@ -373,8 +373,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Publish.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="58" column="98" lean-forward="false" selection-start-line="58" selection-start-column="98" selection-end-line="58" selection-end-column="98" />
+        <state relative-caret-position="76">
+          <caret line="79" column="56" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -382,8 +382,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="99">
-            <caret line="362" column="22" lean-forward="false" selection-start-line="362" selection-start-column="22" selection-end-line="362" selection-end-column="22" />
+          <first_editor relative-caret-position="1410">
+            <caret line="314" column="74" lean-forward="false" selection-start-line="314" selection-start-column="74" selection-end-line="314" selection-end-column="74" />
             <folding />
           </first_editor>
           <second_editor />

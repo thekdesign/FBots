@@ -135,11 +135,11 @@ https://botman.io/2.0/driver-facebook-messenger
     
         $bots->chat('Hey', 'Hello!');
         
-    // other chat function
+    // other chat function ($method is array or object)
     
         $bots->chat('Hey', $method);
 
-    // conversation function
+    // conversation function (YourConversation is class)
     
         $bots->chat('Hey', startConvesation(new YourConversation));
         
@@ -274,17 +274,17 @@ https://botman.io/2.0/driver-facebook-messenger
     
         $pages = new Publish();    
 
-    /******************************************************/
-    /*                   post method                      */
-    /* -------------------------------------------------- */
-    /* $pages_id     : id from your facebook pages        */
-    /* $message      : write what you want to post        */
-    /* $link         : if you want to post include links  */
-    /* $photo        : if you want to post include photos */
-    /* $published    : decide that publish now or later   */
-    /* $publish_time : decide that publish time           */
-    /* -------------------------------------------------- */
-    /******************************************************/
+    /***********************************************************************/
+    /*                          post method                                */
+    /* ------------------------------------------------------------------- */
+    /* $pages_id     : id from your facebook pages        | string         */
+    /* $message      : write what you want to post        | string         */
+    /* $link         : if you want to post include links  | string         */
+    /* $photo        : if you want to post include photos | string(url)    */
+    /* $published    : decide that publish now or later   | string(url)    */
+    /* $publish_time : decide that publish time           | Unix timestamp */
+    /* ------------------------------------------------------------------- */
+    /***********************************************************************/
         
     // post function
     
@@ -293,51 +293,52 @@ https://botman.io/2.0/driver-facebook-messenger
     
         $pages->post($pages_id, $message);
     
-    /****************************************************/
-    /*                      get method                  */
-    /* ------------------------------------------------ */
-    /* $page_id  : the post's id                        */
-    /* $type     : get information from pages or posts  */
-    /* ------------------------------------------------ */
-    /****************************************************/
+    /*************************************************************/
+    /*                          get method                       */
+    /* --------------------------------------------------------- */
+    /* $page_id  : the post's id                        | string */
+    /* $type     : get information from pages or posts  | string */
+    /* --------------------------------------------------------- */
+    /*************************************************************/
         
     // get function
         
         $pages->get($page_id);
 
-    /**************************************************/
-    /*                 reply method                   */
-    /* ---------------------------------------------- */
-    /* $type     : comments, private_replies          */
-    /* $page_id  : the post's id                      */
-    /* $message  : write what you want to reply       */
-    /* ---------------------------------------------- */
-    /**************************************************/
+    /************************************************************************/
+    /*                               reply method                           */
+    /* -------------------------------------------------------------------- */
+    /* $type     : comments, private_replies(Permissions problems) | string */
+    /* $page_id  : the post's id                                   | string */
+    /* $message  : write what you want to reply                    | string */
+    /* -------------------------------------------------------------------- */
+    /************************************************************************/
     
     // reply function
     
         $pages->reply($type, $page_id, $message);
 
-    /**************************************************/
-    /*                 autoReply method               */
-    /* ---------------------------------------------- */
-    /* $type_reply : comments, private_replies        */
-    /* $page_id    : the post's id                    */
-    /* $hears      : keyword that start to reply      */
-    /* $reply      : write what you want to reply     */
-    /* ---------------------------------------------- */
-    /**************************************************/
+    /**********************************************************/
+    /*                    autoReply method                    */
+    /* ------------------------------------------------------ */
+    /* $type_reply : comments, private_replies    | string    */
+    /* $page_id    : the post's id                | string    */
+    /* $hears      : keyword that start to reply  | string    */
+    /* $reply      : write what you want to reply | string    */
+    /* $repeat     : remove the repeat user       | boolean   */
+    /* ------------------------------------------------------ */
+    /**********************************************************/
         
     // autoReply function
     
         $pages->autoReply($type_reply, $page_id, $hears, $reply);
         
-    /*********************************************/
-    /*            finishPost method              */
-    /* ----------------------------------------- */
-    /* $post_id  : the post's id                 */
-    /* ----------------------------------------- */
-    /*********************************************/
+    /****************************************/
+    /*          finishPost method           */
+    /* ------------------------------------ */
+    /* $post_id  : the post's id   | string */
+    /* ------------------------------------ */
+    /****************************************/
     
     // finishPost function
     
