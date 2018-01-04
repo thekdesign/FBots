@@ -23,13 +23,18 @@ class FBots
     //Create the bots
     private $bots;
 
-    //get the reply
-    private $ans;
-
     public function __construct(Request $request)
     {
         $this->bots = FBotsFactory::create($request);
     }
+
+    /********************************************/
+    /*                chat method               */
+    /* ---------------------------------------- */
+    /* $hears  : keyword that start to reply    */
+    /* $reply  : write what you want to reply   */
+    /* ---------------------------------------- */
+    /********************************************/
 
     public function chat($hears, $reply)
     {
@@ -41,6 +46,13 @@ class FBots
         });
     }
 
+    /********************************************/
+    /*            chat_fallback method          */
+    /* ---------------------------------------- */
+    /* $reply  : write what you want to reply   */
+    /* ---------------------------------------- */
+    /********************************************/
+
     public function chat_fallback($reply)
     {
 
@@ -50,6 +62,15 @@ class FBots
 
         });
     }
+
+    /***************************************************************************/
+    /*                          startConversation method                       */
+    /* ----------------------------------------------------------------------- */
+    /* make your conversation function                                         */
+    /* reference - https://botman.io/2.0/conversations#starting-a-conversation */
+    /* ----------------------------------------------------------------------- */
+    /***************************************************************************/
+
 
     public function startConversation(Conversation $instance, $recipient = null, $driver = null)
     {

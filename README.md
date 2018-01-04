@@ -120,6 +120,36 @@ https://botman.io/2.0/driver-facebook-messenger
 <strong>ChatBots</strong>
 
 ```
+
+    /************************/
+    /* -------------------- */
+    /*         Chat         */
+    /* -------------------- */
+    /************************/
+    
+    // new a fbot
+    
+        $bots = new FBots($request);
+    
+    // chat function
+    
+        $bots->chat('Hey', 'Hello!');
+        
+    // other chat function
+    
+        $bots->chat('Hey', $method);
+
+    // conversation function
+    
+        $bots->chat('Hey', startConvesation(new YourConversation));
+        
+    // listen function
+    
+        $bots->listen();
+
+```
+
+```
         $bots = new FBots($request);
         
         // 按鈕形式 button template
@@ -233,6 +263,89 @@ https://botman.io/2.0/driver-facebook-messenger
 <strong>Pages</strong>
 
 ```
+    
+        /***************************/
+        /* ----------------------- */
+        /*         Publish         */
+        /* ----------------------- */
+        /***************************/
+        
+    // new a publish
+    
+        $pages = new Publish();    
+
+    /******************************************************/
+    /*                   post method                      */
+    /* -------------------------------------------------- */
+    /* $pages_id     : id from your facebook pages        */
+    /* $message      : write what you want to post        */
+    /* $link         : if you want to post include links  */
+    /* $photo        : if you want to post include photos */
+    /* $video        : if you want to post include videos */
+    /* $published    : decide that publish now or later   */
+    /* $publish_time : decide that publish time           */
+    /* -------------------------------------------------- */
+    /******************************************************/
+        
+    // post function
+    // 圖片及影片的上傳方式，請參考facebook的規則
+    // reference facebook about upload images and videos
+    // https://developers.facebook.com/docs/graph-api/video-uploads 
+    
+        $pages->post($pages_id, $message);
+    
+        /****************************************************/
+        /*                      get method                  */
+        /* ------------------------------------------------ */
+        /* $page_id  : the post's id                        */
+        /* $type     : get information from pages or posts  */
+        /* ------------------------------------------------ */
+        /****************************************************/
+        
+    // get function
+        
+        $pages->get($page_id);
+
+    /**************************************************/
+    /*                 reply method                   */
+    /* ---------------------------------------------- */
+    /* $type     : comments, private_replies          */
+    /* $page_id  : the post's id                      */
+    /* $message  : write what you want to reply       */
+    /* ---------------------------------------------- */
+    /**************************************************/
+    
+    // reply function
+    
+        $pages->reply($type, $page_id, $message);
+
+    /**************************************************/
+    /*                 autoReply method               */
+    /* ---------------------------------------------- */
+    /* $type_reply : comments, private_replies        */
+    /* $page_id    : the post's id                    */
+    /* $hears      : keyword that start to reply      */
+    /* $reply      : write what you want to reply     */
+    /* ---------------------------------------------- */
+    /**************************************************/
+        
+    // autoReply function
+    
+        $pages->autoReply($type_reply, $page_id, $hears, $reply);
+        
+    /*********************************************/
+    /*            finishPost method              */
+    /* ----------------------------------------- */
+    /* $post_id  : the post's id                 */
+    /* ----------------------------------------- */
+    /*********************************************/
+    
+    // finishPost function
+    
+        $pages->finishPost($post_id);
+```
+
+```
 Get Method
 
 reference - https://developers.facebook.com/docs/graph-api/reference/page/
@@ -253,7 +366,9 @@ $pages->get('page_id', $type);
         $photo = '';
         $video = '';
         
-        // 排定發佈
+        /* 排定發佈，選擇false會得到response後的id，根據個人需要發佈的時機發佈 */
+        /* If you set "$publish = false", you will get the id of response. */
+        /* You can decide the publish time. */ 
         // reference - https://developers.facebook.com/docs/pages/publishing
         $publish = true;
 
@@ -277,7 +392,7 @@ $pages->get('page_id', $type);
         $pages->reply('comments', 'page_id', 'message');
     }
     
-        public function obtain()
+    public function obtain()
     {
         $pages = new Publish();
 
@@ -289,6 +404,13 @@ $pages->get('page_id', $type);
         // $result = $pages->get('page_id', 'comments');
 
         return $result;
+    }
+    
+    public function send()
+    {
+        $pages = new Publish();
+        
+        $pages->finishPost('page_id');
     }
 
 ```
