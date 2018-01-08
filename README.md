@@ -83,6 +83,9 @@ class ChatController extends Controller
         /* --------------------------------------------------------- */
         /*************************************************************/
 
+        // 記得去獲取永久不過期的 facebook page's access_token
+        // get the facebook page's access_token that never expires
+
         $config = [
             'facebook' => [
                 'token' => env('FACEBOOK_TOKEN'),
