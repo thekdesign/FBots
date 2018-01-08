@@ -23,9 +23,9 @@ class FBots
     //Create the bots
     private $bots;
 
-    public function __construct(Request $request)
+    public function __construct(Request $request, $config)
     {
-        $this->bots = FBotsFactory::create($request);
+        $this->bots = FBotsFactory::create($request, $config);
     }
 
     /********************************************/

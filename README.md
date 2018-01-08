@@ -72,8 +72,26 @@ class ChatController extends Controller
 {
     public function talk(Request $request)
     {
+    
+        
+        /*************************************************************/
+        /*                            config                         */
+        /* --------------------------------------------------------- */
+        /* token         : facebook page's access_token              */
+        /* app_secret    : application's secret                      */
+        /* verification  : to connect webhook, so it depends on you  */
+        /* --------------------------------------------------------- */
+        /*************************************************************/
 
-        $bots = new FBots($request);
+        $config = [
+            'facebook' => [
+                'token' => env('FACEBOOK_TOKEN'),
+                'app_secret' => env('FACEBOOK_APP_SECRET'),
+                'verification' => env('FACEBOOK_VERIFICATION'),
+            ]
+        ];
+
+        $bots = new FBots($request, $config);
 
         $bots->chat('Hey', 'Hello');
 
