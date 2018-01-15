@@ -151,26 +151,22 @@ class Publish
 
                 foreach ($comment_replies as $comment_reply) {
 
-                    if ($repeat) {
+                    if ($repeat && $comment_reply->from->id === substr($page_id, 0, 15)) {
 
-                        if ($comment_reply->from->id === substr($page_id, 0, 15)) {
-
-                            $comment_repeat = false;
-
-                        }
+                        $comment_repeat = false;
 
                     }
 
                 }
             }
 
-            if (array_unique($publish_id) === $publish_id) {
+            if (
+                $comment_repeat
+                && $hears === $publish_last->message
+                && array_unique($publish_id) === $publish_id
+            ) {
 
-                if ($hears === $publish_last->message && $comment_repeat) {
-
-                    $this->reply($type_reply, $publish_last->id, $reply);
-
-                }
+                $this->reply($type_reply, $publish_last->id, $reply);
 
             }
 
