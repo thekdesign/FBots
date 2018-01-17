@@ -1,7 +1,7 @@
 # FBots
 
-[![Latest Stable Version](https://poser.pugx.org/phpunit/phpunit/version)](https://packagist.org/packages/phpunit/phpunit)
-
+[![Latest Stable Version](https://github.com/ThekDesign/FBots/version)](https://packagist.org/packages/thekdesign/fbots)
+[![Latest Unstable Version](https://github.com/ThekDesign/FBots/v/unstable)](https://packagist.org/packages/thekdesign/fbots)
 將 botman 與 facebook messenger 串接，達到快速建立 facebook messenger 的 chatbots.
 <br>A bots with botman, facebook messenger and pages.
 
