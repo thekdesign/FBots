@@ -337,13 +337,13 @@ https://botman.io/2.0/driver-facebook-messenger
     
     // reply function
     
-        $pages->reply($type, $page_id, $message);
+        $pages->reply($type, $post_id, $message);
 
     /**********************************************************/
     /*                    autoReply method                    */
     /* ------------------------------------------------------ */
     /* $type_reply : comments, private_replies    | string    */
-    /* $page_id    : the post's id                | string    */
+    /* $post_id    : the post's id                | string    */
     /* $hears      : keyword that start to reply  | string    */
     /* $reply      : write what you want to reply | string    */
     /* $repeat     : remove the repeat user       | boolean   */
@@ -352,7 +352,7 @@ https://botman.io/2.0/driver-facebook-messenger
         
     // autoReply function
     
-        $pages->autoReply($type_reply, $page_id, $hears, $reply);
+        $pages->autoReply($type_reply, $post_id, $hears, $reply);
         
     /****************************************/
     /*          finishPost method           */

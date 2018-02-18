@@ -78,14 +78,14 @@ class Publish
     /*                         reply method                        */
     /* ----------------------------------------------------------- */
     /* $type     : comments, private_replies(Permissions problems) */
-    /* $page_id  : the post's id                                   */
+    /* $post_id  : the post's id                                   */
     /* $message  : write what you want to reply                    */
     /* ----------------------------------------------------------- */
     /***************************************************************/
 
     public function reply(
         $type,
-        $page_id,
+        $post_id,
         $message
     ) {
 
@@ -101,7 +101,7 @@ class Publish
             'message' => $message,
         ];
 
-        $result = $this->curl->post('https://graph.facebook.com/v2.11/' . $page_id . '/' . $type
+        $result = $this->curl->post('https://graph.facebook.com/v2.11/' . $post_id . '/' . $type
             , $prams
             , $body
             , $header);
@@ -113,7 +113,7 @@ class Publish
     /*                 autoReply method               */
     /* ---------------------------------------------- */
     /* $type_reply : comments, private_replies        */
-    /* $page_id    : the post's id                    */
+    /* $post_id    : the post's id                    */
     /* $hears      : keyword that start to reply      */
     /* $reply      : write what you want to reply     */
     /* ---------------------------------------------- */
@@ -121,7 +121,7 @@ class Publish
 
     public function autoReply(
         $type_reply,
-        $page_id,
+        $post_id,
         $hears,
         $reply,
         $repeat = true
@@ -131,7 +131,7 @@ class Publish
 
         $comment_repeat = true;
 
-        $publish_list = $this->get($page_id, 'comments');
+        $publish_list = $this->get($post_id, 'comments');
 
         $publish_comments = json_decode($publish_list->getContent())->data;
 
@@ -151,7 +151,7 @@ class Publish
 
                 foreach ($comment_replies as $comment_reply) {
 
-                    if ($repeat && $comment_reply->from->id === substr($page_id, 0, 15)) {
+                    if ($repeat && $comment_reply->from->id === substr($post_id, 0, 15)) {
 
                         $comment_repeat = false;
 
@@ -177,12 +177,12 @@ class Publish
     /****************************************************/
     /*                    get method                    */
     /* ------------------------------------------------ */
-    /* $page_id  : the post's id                        */
+    /* $post_id  : the post's id                        */
     /* $type     : get information from pages or posts  */
     /* ------------------------------------------------ */
     /****************************************************/
 
-    public function get($page_id, $type = '')
+    public function get($post_id, $type = '')
     {
         $prams = [
             'access_token' => env('FACEBOOK_TOKEN'),
@@ -192,7 +192,7 @@ class Publish
             'Content-Type' => 'application/json',
         ];
 
-        $result = $this->curl->get('https://graph.facebook.com/v2.11/' . $page_id . '/' . $type
+        $result = $this->curl->get('https://graph.facebook.com/v2.11/' . $post_id . '/' . $type
             , $prams
             , $header);
 
