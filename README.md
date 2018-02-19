@@ -2,8 +2,7 @@
 
 [![stable version](https://img.shields.io/badge/stable-0.2.4-brightgreen.svg?style=flat-square)](https://packagist.org/packages/thekdesign/fbots)
 [![unstable version](https://img.shields.io/badge/unstable-dev-orange.svg?style=flat-square)](https://packagist.org/packages/thekdesign/fbots)
-[![php version](https://img.shields.io/badge/php->=7.0.0-blue.svg?style=flat-square)](http://php.net)
-[![laravel version](https://img.shields.io/badge/laravel->=5.5.0-blue.svg?style=flat-square)](https://laravel.com/docs/5.5)
+[![php version](https://img.shields.io/badge/php->=7.0.0-blue.svg?style=flat-square)](https://packagist.org/packages/thekdesign/fbots)
 [![GitHub license](https://img.shields.io/github/license/ThekDesign/FBots.svg?style=flat-square)](https://github.com/ThekDesign/FBots/blob/master/LICENSE)<br>
 
 reference - [BotMan](https://botman.io/)<br>
