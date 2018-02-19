@@ -1,9 +1,10 @@
 # FBots
 
+[![Packagist](https://img.shields.io/packagist/dd/doctrine/orm.svg?style=flat-square)](https://packagist.org/packages/thekdesign/fbots)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/symfony/symfony.svg?style=flat-square)]([![Packagist](https://img.shields.io/packagist/dd/doctrine/orm.svg?style=flat-square)](https://packagist.org/packages/thekdesign/fbots))
 [![Latest Stable Version](https://poser.pugx.org/thekdesign/fbots/v/stable)](https://packagist.org/packages/thekdesign/fbots)
 [![Latest Unstable Version](https://poser.pugx.org/thekdesign/fbots/v/unstable)](https://packagist.org/packages/thekdesign/fbots)
-[![License](https://poser.pugx.org/thekdesign/fbots/license)](https://packagist.org/packages/thekdesign/fbots)
-
+[![GitHub license](https://img.shields.io/github/license/ThekDesign/FBots.svg?style=flat-square)](https://github.com/ThekDesign/FBots/blob/master/LICENSE)
 reference - [BotMan](https://botman.io/)<br>
 reference - [Messenger](https://developers.facebook.com/docs/messenger-platform)<br>
 reference - [Pages](https://developers.facebook.com/docs/pages)
